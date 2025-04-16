@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Love Letter</title>
+    <title>A Spring Letter for Donna</title>
     <style>
         .video-container {
             margin: 40px 0;
@@ -13,119 +13,117 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            border: 3px solid rgba(255, 182, 193, 0.8);
+            border: 3px solid rgba(144, 238, 144, 0.5);
         }
 
         video {
             width: 100%;
             display: block;
         }
-        /* Romantic Background */
+        
         body {
-            background: linear-gradient(rgba(255, 192, 203, 0.3), rgba(255, 228, 225, 0.4)), 
-                        url('/api/placeholder/1920/1080') no-repeat center center fixed;
+            background: linear-gradient(rgba(173, 216, 230, 0.2), rgba(144, 238, 144, 0.2)), 
+                        url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
             background-size: cover;
             font-family: 'Georgia', serif;
-            line-height: 2; /* Increased for better readability */
+            line-height: 2;
             margin: 0;
             padding: 60px 20px;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: black;
+            color: #333;
             position: relative;
-            text-shadow: none;
         }
 
-        /* Diagonal "Valentine's Day 2025" text */
+        /* Seasonal watermark */
         .watermark {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) rotate(-30deg);
-            font-size: 180px; /* Made BIGGER */
+            font-size: 180px;
             font-weight: bold;
-            color: rgba(255, 105, 180, 0.2); /* Soft pink, transparent */
+            color: rgba(144, 238, 144, 0.1);
             pointer-events: none;
             white-space: nowrap;
         }
 
-        /* Floating Hearts & Roses */
-        @keyframes floatHearts {
+        /* Floating spring elements */
+        @keyframes floatSpring {
             0% { transform: translateY(0) scale(1); opacity: 1; }
             100% { transform: translateY(-100vh) scale(1.8); opacity: 0; }
         }
 
-        .hearts {
+        .spring-elements {
             position: absolute;
             width: 100%;
             height: 100%;
             pointer-events: none;
         }
 
-        .heart, .rose {
+        .blossom, .leaf {
             position: absolute;
             bottom: 0;
-            font-size: 50px; /* Made bigger */
-            animation: floatHearts 10s linear infinite;
+            font-size: 50px;
+            animation: floatSpring 10s linear infinite;
         }
 
-        /* Adjusting individual hearts & roses */
-        .heart:nth-child(1) { left: 10%; animation-duration: 7s; font-size: 40px; }
-        .heart:nth-child(2) { left: 25%; animation-duration: 6s; font-size: 48px; }
-        .heart:nth-child(3) { left: 40%; animation-duration: 9s; font-size: 50px; }
-        .heart:nth-child(4) { left: 55%; animation-duration: 8s; font-size: 52px; }
-        .heart:nth-child(5) { left: 70%; animation-duration: 7s; font-size: 45px; }
-        .heart:nth-child(6) { left: 85%; animation-duration: 6s; font-size: 42px; }
-        .heart:nth-child(7) { left: 95%; animation-duration: 9s; font-size: 50px; }
+        .blossom:nth-child(1) { left: 10%; animation-duration: 7s; font-size: 40px; }
+        .blossom:nth-child(2) { left: 25%; animation-duration: 6s; font-size: 48px; }
+        .blossom:nth-child(3) { left: 40%; animation-duration: 9s; font-size: 50px; }
+        .blossom:nth-child(4) { left: 55%; animation-duration: 8s; font-size: 52px; }
+        .leaf:nth-child(5) { left: 70%; animation-duration: 7s; font-size: 45px; }
+        .leaf:nth-child(6) { left: 85%; animation-duration: 6s; font-size: 42px; }
+        .blossom:nth-child(7) { left: 95%; animation-duration: 9s; font-size: 50px; }
+        .blossom:nth-child(8) { left: 15%; animation-duration: 10s; font-size: 50px; }
+        .leaf:nth-child(9) { left: 35%; animation-duration: 8s; font-size: 55px; }
+        .blossom:nth-child(10) { left: 50%; animation-duration: 12s; font-size: 60px; }
+        .leaf:nth-child(11) { left: 65%; animation-duration: 9s; font-size: 50px; }
+        .blossom:nth-child(12) { left: 80%; animation-duration: 7s; font-size: 45px; }
 
-        .rose:nth-child(1) { left: 15%; animation-duration: 10s; font-size: 50px; }
-        .rose:nth-child(2) { left: 35%; animation-duration: 8s; font-size: 55px; }
-        .rose:nth-child(3) { left: 50%; animation-duration: 12s; font-size: 60px; }
-        .rose:nth-child(4) { left: 65%; animation-duration: 9s; font-size: 50px; }
-        .rose:nth-child(5) { left: 80%; animation-duration: 7s; font-size: 45px; }
-
-        /* Love Letter Styling */
+        /* Letter Styling */
         .letter-container {
-            max-width: 900px; /* Increased width */
+            max-width: 900px;
             padding: 70px;
             position: relative;
-            background: transparent; /* No white box */
+            background: rgba(255, 255, 255, 0.7);
             border-radius: 20px;
             text-align: center;
-            border: 3px solid rgba(255, 182, 193, 0.8);
+            border: 3px solid rgba(34, 139, 34, 0.5);
+            backdrop-filter: blur(5px);
         }
 
         .date {
             font-style: italic;
             text-align: right;
-            font-size: 30px; /* Made larger */
+            font-size: 30px;
             margin-bottom: 25px;
-            color: #d4688a;
+            color: #2e8b57;
         }
 
         p {
             margin-bottom: 25px;
-            font-size: 28px; /* Made text bigger */
-            color: black;
+            font-size: 28px;
+            color: #333;
         }
 
         .signature {
             margin-top: 50px;
             font-style: italic;
             font-weight: bold;
-            font-size: 32px; /* Larger signature */
-            color: black;
+            font-size: 32px;
+            color: #333;
             text-align: right;
         }
 
         .postscript {
             margin-top: 40px;
-            font-size: 26px; /* Bigger P.S. */
+            font-size: 26px;
             font-weight: bold;
-            color: black;
-            border-top: 2px solid rgba(255, 182, 193, 0.8);
+            color: #333;
+            border-top: 2px solid rgba(34, 139, 34, 0.5);
             padding-top: 20px;
         }
     </style>
@@ -133,33 +131,31 @@
 <body>
 
     <!-- Diagonal Watermark -->
-    <div class="watermark">Valentine's Day 2025</div>
+    <div class="watermark">Spring 2025</div>
 
-    <!-- Floating Hearts & Roses -->
-    <div class="hearts">
-        <div class="heart">❤️</div>
-        <div class="heart">💖</div>
-        <div class="heart">💕</div>
-        <div class="heart">💗</div>
-        <div class="heart">💘</div>
-        <div class="heart">💓</div>
-        <div class="heart">❤️</div>
-        <div class="rose">🌹</div>
-        <div class="rose">🌹</div>
-        <div class="rose">🌹</div>
-        <div class="rose">🌹</div>
-        <div class="rose">🌹</div>
+    <!-- Floating Spring Elements -->
+    <div class="spring-elements">
+        <div class="blossom">🌸</div>
+        <div class="blossom">🌼</div>
+        <div class="blossom">🌺</div>
+        <div class="blossom">🌷</div>
+        <div class="leaf">🍃</div>
+        <div class="leaf">🌿</div>
+        <div class="blossom">💮</div>
+        <div class="blossom">🏵️</div>
+        <div class="leaf">🍀</div>
+        <div class="blossom">🌻</div>
+        <div class="leaf">🍂</div>
+        <div class="blossom">🌹</div>
     </div>
 
     <!-- Love Letter -->
     <div class="letter-container">
-        <div class="date">Valentine's Day 2025</div>
+        <div class="date">April 16, 2025</div>
 
-        <p>My dearest love,</p>
+        <p>My dearest Donna,</p>
 
-        <p>Through all of life's twists and turns, my heart has never wavered in knowing one truth: you are my home. Since that magical Halloween in 2010, you've been the one who makes my world complete.</p>
         <div class="video-container">
-            <!-- Use Google Drive's embedded player -->
             <iframe src="https://drive.google.com/file/d/1PU05TgB5JWhLXthoP7IaxhElsXU6m5BY/preview" 
                     width="100%" 
                     height="400"
@@ -170,25 +166,17 @@
             </iframe>
         </div>
 
-        <p>I love the little things about you that make my heart skip a beat - like those sweet little yips in your breath that catch me by surprise and make me fall in love all over again.</p>
+        <p>Spring has always been our time of stubborn hope. The way green pushes through cracked earth, how light lingers a little longer each evening—it reminds me that growth isn't always graceful, but it's always <em>possible</em>.</p>
 
-        <p>The time we spent apart only made me understand more deeply how precious what we share truly is. Like a compass needle always finding north, my soul always finds its way back to you.</p>
+        <p>I see you. The weight you carry, the distance between us even in the same room. I won't pretend this isn't hard, or that my heart doesn't ache when I wonder if you still believe in us. But 16 years taught me this: love isn't just the easy blooms—it's the roots that hold fast when the storm comes.</p>
 
-        <p>This Valentine's Day, I'm not just asking you to be my Valentine - I'm asking you to continue this beautiful journey of rediscovery with me. Every day I find new reasons to fall in love with you.</p>
+        <p>I miss the way your laughter used to fill our kitchen. The way your hand would find mine without thinking. I miss <em>you</em>—not just the idea of us, but the messy, real, beautiful life we built.</p>
 
-        <p>You're not just my wife - you're my best friend, my partner, my Halloween anniversary sweetheart. Your strength inspires me, your kindness humbles me, and your love makes me want to be better every day.</p>
-        
-        
-        
-        
-        <p>So, my love, my forever Halloween treat, will you be my Valentine? Not just for one day, but for all the days to come? Let's write the next chapters of our story together.</p>
+        <p>There has to be a part of you that still wants this—that knows we can find our way back—I'm here. Not with grand promises, but with the quiet determination of a man who knows what he has lost. We don't have to be perfect. We just have to be <em>willing</em>.</p>
 
-        <div class="signature">
-            With all my love and hope for our tomorrow,<br>
-            **Joe**
-        </div>
+        <p>This spring, let's plant something new. Not over what we were, but beside it. One honest conversation, one fragile truth at a time.</p>
+
         <div class="video-container">
-            <!-- Use Google Drive's embedded player -->
             <iframe src="https://drive.google.com/file/d/1xIYMcwaI8VqZch6xLMwV5_giPqiFUX_U/preview" 
                     width="100%" 
                     height="400"
@@ -199,8 +187,15 @@
             </iframe>
         </div>
 
+        <p>However this unfolds—thank you for the 16 years that made me the man who will fight for you until the end.</p>
+
+        <div class="signature">
+            With all my love and hope for our tomorrow,<br>
+            <strong>Joe</strong>
+        </div>
+
         <div class="postscript">
-            P.S. Thank you for making every day since 10/31/10 better than the last.
+            P.S. The seasons change, but what we've built remains.
         </div>
     </div>
 
